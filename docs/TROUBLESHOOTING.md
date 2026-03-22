@@ -1,4 +1,138 @@
-# 常见问题排查
+# Troubleshooting / 常见问题排查
+
+[English](#english) | [中文](#chinese)
+
+---
+
+<a name="english"></a>
+## 🇺🇸 English
+
+## Issue 1: "Please manually select the bibliography area first"
+
+**Cause**: You ran the macro without selecting the bibliography list area
+
+**Solution**:
+1. Find the bibliography list in your document
+2. Drag from the first to the last reference with your mouse to select the entire area
+3. Run the macro again
+
+---
+
+## Issue 2: Last citation jumps to [1] instead of the last item
+
+**Cause**: Word bookmark cache ID conflict
+
+**Solution**:
+- This macro has special handling for this issue (`Last_Ref_` marker). If problems persist:
+1. Delete all bibliography bookmarks (manually or use cleanup macro)
+2. Re-run this macro
+
+---
+
+## Issue 3: Some citations have no links added
+
+**Possible causes**:
+1. The citation doesn't exist in the bibliography list
+2. Citation format doesn't match expectations (e.g., using Chinese brackets【】)
+3. The citation was manually entered instead of inserted by Zotero
+
+**Solution**:
+1. Ensure all citations are inserted via Zotero
+2. Check if the bibliography list has the corresponding number
+3. Manually verify if the citation brackets are English `[]`
+
+---
+
+## Issue 4: Jump position is inaccurate
+
+**Possible causes**:
+1. Page breaks or section breaks interfere with the document
+2. Bibliography uses special paragraph formatting
+
+**Solution**:
+1. Try removing page breaks, use paragraph pagination settings
+2. Ensure each bibliography entry is an independent paragraph
+
+---
+
+## Issue 5: Zotero refresh causes links to disappear after macro runs
+
+**Cause**: Zotero refreshes citation fields and overwrites existing hyperlinks
+
+**Solution**:
+1. Complete all citation additions and modifications in Zotero first
+2. Then run this macro to add jump links
+3. Re-run this macro after modifying citations
+
+---
+
+## Issue 6: "No reference numbers recognized"
+
+**Possible causes**:
+1. Bibliography numbers use Chinese brackets `【】` instead of English `[]`
+2. Number format is not pure numeric (e.g., [1a])
+3. Selected area doesn't contain numbers
+
+**Solution**:
+1. Ensure numbers use English brackets `[number]`
+2. Check if the selected area is correct
+
+---
+
+## Issue 7: "Cannot save because file already exists"
+
+**Cause**: Document is occupied by another program
+
+**Solution**:
+1. Close the document and reopen
+2. Use "Save As" to save as a new `.docm` file
+
+---
+
+## Issue 8: Macro is disabled and cannot run
+
+**Cause**: Word security settings block macro execution
+
+**Solution**:
+
+### Method 1: Enable Macros
+1. Click **File** → **Options** → **Trust Center** → **Trust Center Settings**
+2. Select **Macro Settings** → **Enable all macros** (not recommended for long-term use)
+
+### Method 2: Add Trusted Location
+1. Click **File** → **Options** → **Trust Center** → **Trust Center Settings**
+2. Select **Trusted Locations** → **Add new location**
+3. Add the folder where your document is located
+
+---
+
+## Issue 9: Word becomes unresponsive after running macro
+
+**Possible cause**: Document too large or too many citations
+
+**Solution**:
+1. Be patient, the macro may take a few seconds when processing many citations
+2. Close other programs to free up memory
+3. Process in batches: handle some sections first, then others
+
+---
+
+## Other Issues
+
+If the above methods cannot solve your problem, please:
+
+1. Submit an [Issue](https://github.com/xz-666/zotero-word-crossref/issues) on GitHub
+2. Include the following in your description:
+   - Word version
+   - Zotero version
+   - Operating system version
+   - Detailed description of the issue
+   - Screenshots of error messages (if any)
+
+---
+
+<a name="chinese"></a>
+## 🇨🇳 中文
 
 ## 问题 1：运行宏时提示"请先手动选中参考文献区域"
 
@@ -114,7 +248,7 @@
 
 如果以上方法无法解决你的问题，请：
 
-1. 在 GitHub 上提交 [Issue](https://github.com/yourusername/zotero-word-crossref/issues)
+1. 在 GitHub 上提交 [Issue](https://github.com/xz-666/zotero-word-crossref/issues)
 2. 描述问题时请包含：
    - Word 版本
    - Zotero 版本
