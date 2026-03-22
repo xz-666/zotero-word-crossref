@@ -1,0 +1,26 @@
+# Word temporary files
+~$*
+*.tmp
+*.wbk
+
+# Word backup files
+*.bak
+
+# VBA project backup
+*.vba.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Example files that should not be committed
+examples/*.docm
+examples/~$*
