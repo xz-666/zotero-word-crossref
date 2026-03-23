@@ -2,7 +2,7 @@
 
 [English](#english) | [中文](#chinese)
 
----n
+---
 
 <a name="english"></a>
 ## 🇺🇸 English
